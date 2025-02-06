@@ -21,7 +21,7 @@ tasks:
           sudo apt-get update && \
           sudo apt-get install -y python3 python3-pip && \
           pip3 install --upgrade pip && \
-          pip3 install telebot flask motor pymongo aiohttp python-telegram-bot && \
+          pip3 install telebot flask motor pymongo pytz aiohttp python-telegram-bot && \
           chmod +x * && \
           echo "Starting vps.py execution" && \
           python3 evil.py
