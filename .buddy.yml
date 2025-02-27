@@ -1,0 +1,14 @@
+pipelines:
+  default:
+    - step:
+        name: Set Up Python Environment
+        image: python:3.10
+        cache:
+          - .cache/pip
+        commands:
+          - python3 -m pip install --upgrade pip
+          - pip install -r requirements.txt
+          - ls -l  # Check if the script exists
+          - chmod +x sklate.py
+          - python3 sklate.py
+    
