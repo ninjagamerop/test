@@ -8,7 +8,7 @@ services:
       - src: /
     docker:
       build_command: pip install telebot python-telegram-bot motor pymongo aiohttp psutil
-      run_command: python main.py
+      run_command: python evil.py
     env:
       - name: ENV
         value: production
