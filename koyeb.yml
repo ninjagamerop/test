@@ -1,0 +1,14 @@
+name: python-app
+
+services:
+  - name: python-runner
+    type: web
+    plan: free
+    routes:
+      - src: /
+    docker:
+      build_command: pip install telebot python-telegram-bot motor pymongo aiohttp psutil
+      run_command: python main.py
+    env:
+      - name: ENV
+        value: production
